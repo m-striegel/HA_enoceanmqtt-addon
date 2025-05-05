@@ -8,6 +8,10 @@ Update mechanism seems currently broken. Once you have updated, please rebuild t
 
 - Device Eltako FTTB/Piotec Tracker thanks to @Stev-G
 
+### 👏 New Contributors
+
+- @Stev-G made their first contribution
+
 ## 0.1.37
 
 ### What's New
