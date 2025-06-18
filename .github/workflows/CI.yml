@@ -10,4 +10,4 @@ on:
 
 jobs:
   workflows:
-    uses: hassio-addons/workflows/.github/workflows/addon-ci.yaml@main
+    uses: home-assistant/addons-example/blob/main/.github/workflows/lint.yaml@main
