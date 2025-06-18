@@ -1,12 +1,16 @@
-# ⚠️ Warning on update
-
-Update mechanism seems currently broken. Once you have updated, please rebuild the addon (bottom right button on addon page) to be sure to have the latest version of all dependencies.
-
 ## 0.1.38
 
 ### ✨ What's New
 
 - Device Eltako FTTB/Piotec Tracker thanks to @Stev-G
+
+### 🔧 What's Fixed
+
+- Update mechanism is now fixed, no need to rebuild the addon after update (https://github.com/ChristopheHD/HA_enoceanmqtt-addon/issues/29)
+
+### 🚀 What's Improved
+
+- Addon is now downloaded instead of build locally making it faster to install and version reliable
 
 ### 👏 New Contributors
 
