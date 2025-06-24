@@ -12,6 +12,10 @@
 
 - Addon is now downloaded instead of build locally making it faster to install and version reliable
 
+### 🛑 What's Removed
+
+- Architectures armhf, armv7 and i386 have been removed. If still needed, please open an issue on GitHub
+
 ### 👏 New Contributors
 
 - @Stev-G made their first contribution
