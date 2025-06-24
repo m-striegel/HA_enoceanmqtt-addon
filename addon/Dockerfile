@@ -13,7 +13,7 @@ RUN apk add --no-cache python3 py3-pip git && \
     pip3 install -r requirements.txt && \
     pip3 install git+https://github.com/ChristopheHD/enocean.git && \
     git clone -b master --single-branch --depth 1 https://github.com/embyt/enocean-mqtt.git && \
-    cd enocean-mqtt && python3 setup.py develop && cd .. && \
+    cd enocean-mqtt && pip install -e && cd .. && \
     echo "Installing from repository head" && \
     git clone -b develop --single-branch --depth 1 https://github.com/ChristopheHD/HA_enoceanmqtt.git ; \
     cp -rf ./HA_enoceanmqtt/enoceanmqtt enocean-mqtt && \
