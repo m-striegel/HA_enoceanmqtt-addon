@@ -7,6 +7,7 @@
 ### 🔧 What's Fixed
 
 - Update mechanism is now fixed, no need to rebuild the addon after update (https://github.com/ChristopheHD/HA_enoceanmqtt-addon/issues/29)
+- Flood detector and buttons were triggered in automation at HA startup (https://github.com/ChristopheHD/HA_enoceanmqtt-addon/issues/38)
 
 ### 🚀 What's Improved
 
