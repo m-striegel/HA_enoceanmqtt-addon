@@ -14,6 +14,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: Build add-on
+    strategy:
+      matrix:
+        arch: ["aarch64", "amd64"]
     permissions:
       contents: read
       packages: write
@@ -29,7 +32,6 @@ jobs:
           path: "./addon"
 
       - name: Login to GitHub Container Registry
-        if: env.BUILD_ARGS != '--test'
         uses: docker/login-action@v3.4.0
         with:
           registry: ghcr.io
@@ -40,8 +42,7 @@ jobs:
         uses: home-assistant/builder@2025.03.0
         with:
           args: |
-            ${{ env.BUILD_ARGS }} \
-            --all \
+            --${{ matrix.arch }} \
             --target /data/addon \
             --docker-hub "ghcr.io/${{ github.repository_owner }}" \
             --addon
