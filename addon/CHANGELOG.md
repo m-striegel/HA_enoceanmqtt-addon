@@ -1,3 +1,9 @@
+## 0.1.39
+
+### 🔧 What's Fixed
+
+- CPU architecture x86_64 compatibility restored
+
 ## 0.1.38
 
 ### ✨ What's New
