@@ -11,11 +11,6 @@ on:
   push:
     branches:
       - master
-    tags:
-      - '*'
-  create:
-    tags:
-      - '*'
   workflow_dispatch:
 
 jobs:
