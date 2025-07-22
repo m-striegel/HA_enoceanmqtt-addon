@@ -16,7 +16,6 @@ map:
 arch:
   - aarch64
   - amd64
-  - x86_64
 options:
   device_file: "/config/enoceanmqtt.devices"
   enocean_port: ""
