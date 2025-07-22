@@ -1,6 +1,27 @@
-# ⚠️ Warning on update
+## 0.1.38
 
-Update mechanism seems currently broken. Once you have updated, please rebuild the addon (bottom right button on addon page) to be sure to have the latest version of all dependencies.
+### ✨ What's New
+
+- Device Eltako FTTB/Piotec Tracker thanks to @Stev-G
+- Device Eltako TF61D tested by @Luxmaster
+
+### 🔧 What's Fixed
+
+- Update mechanism is now fixed, no need to rebuild the addon after update (https://github.com/ChristopheHD/HA_enoceanmqtt-addon/issues/29)
+- Flood detector and buttons were triggered in automation at HA startup (https://github.com/ChristopheHD/HA_enoceanmqtt-addon/issues/38)
+
+### 🚀 What's Improved
+
+- Addon is now downloaded instead of build locally making it faster to install and version reliable
+
+### 🛑 What's Removed
+
+- Architectures armhf, armv7 and i386 have been removed. If still needed, please open an issue on GitHub
+
+### 👏 New Contributors
+
+- @Stev-G made their first contribution
+- @Luxmaster helped testing new device
 
 ## 0.1.37
 
