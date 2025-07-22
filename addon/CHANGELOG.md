@@ -3,6 +3,7 @@
 ### ✨ What's New
 
 - Device Eltako FTTB/Piotec Tracker thanks to @Stev-G
+- Device Eltako TF61D tested by @Luxmaster
 
 ### 🔧 What's Fixed
 
@@ -20,6 +21,7 @@
 ### 👏 New Contributors
 
 - @Stev-G made their first contribution
+- @Luxmaster helped testing new device
 
 ## 0.1.37
 
