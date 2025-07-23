@@ -1,8 +1,8 @@
-## 0.1.39
+## 0.1.40
 
 ### 🔧 What's Fixed
 
-- CPU architecture x86_64 compatibility restored
+- CPU architecture amd64 compatibility restored (https://github.com/ChristopheHD/HA_enoceanmqtt-addon/issues/51)
 
 ## 0.1.38
 
