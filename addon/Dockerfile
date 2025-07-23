@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:stable
+ARG BUILD_FROM
 FROM $BUILD_FROM
 
 # Create Working Directory
