@@ -43,7 +43,7 @@ jobs:
         with:
           args: |
             --${{ matrix.arch }} \
-            --image "${{ matrix.arch }}-ha_enoceanmqtt-addon"
+            --image "${{ matrix.arch }}-ha_enoceanmqtt-addon" \
             --target /data/addon \
             --docker-hub "ghcr.io/${{ github.repository_owner }}" \
             --addon
