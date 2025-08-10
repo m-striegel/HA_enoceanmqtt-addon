@@ -1,5 +1,9 @@
 ## 0.1.41
 
+### ✨ What's New
+
+- Device Eltako FR62-230V thanks to @jansorg
+
 ### 🚀 What's Improved
 
 - Documentation tab of the addon have been improved (quick setup guide and correct links to wiki)
