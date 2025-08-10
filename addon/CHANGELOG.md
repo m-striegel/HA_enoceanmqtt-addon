@@ -3,6 +3,7 @@
 ### ✨ What's New
 
 - Device Eltako FR62-230V thanks to @jansorg
+- Device Afriso FT thanks to @jansorg
 
 ### 🚀 What's Improved
 
