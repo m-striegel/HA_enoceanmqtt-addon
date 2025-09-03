@@ -1,3 +1,16 @@
+## 0.1.41
+
+### ✨ What's New
+
+- Device Eltako FR62-230V thanks to @jansorg
+- Device Afriso FT thanks to @jansorg
+- EEP D2-01-11
+
+### 🚀 What's Improved
+
+- Documentation tab of the addon have been improved (quick setup guide and correct links to wiki)
+- Use of Python XML library for EEP.xml file (https://github.com/ChristopheHD/HA_enoceanmqtt-addon/issues/43)
+
 ## 0.1.40
 
 ### 🔧 What's Fixed
