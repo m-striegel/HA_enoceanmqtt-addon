@@ -4,6 +4,7 @@
 
 - Device Eltako FR62-230V thanks to @jansorg
 - Device Afriso FT thanks to @jansorg
+- EEP D2-01-11
 
 ### 🚀 What's Improved
 
