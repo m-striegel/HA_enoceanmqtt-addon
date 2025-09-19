@@ -1,3 +1,9 @@
+## 0.1.42
+
+### 🔧 What's Fixed
+
+- EEP D2-01-11 state fixed for DALI controllers (and other controllers based on dimming) (https://github.com/ChristopheHD/HA_enoceanmqtt/pull/19)
+
 ## 0.1.41
 
 ### ✨ What's New
