@@ -1,12 +1,3 @@
-<a name="readme-top"></a>
-
-<!--
-*** Thanks for using Document My Project. (https://github.com/luisvent/document_my_project)
-*** If you have a suggestion that would make this better, please fork
-*** the repo and create a pull request or simply open an issue.
-*** Don't forget to give the project a star!
--->
-
 <div align="center">
 
 <a href="" target="_blank" title="Go to  website">
@@ -15,7 +6,7 @@
 
 # Home Assistant enOcean addon
 
-Easily integrate enOcean protocol using MQTT layer
+Easily integrate enOcean protocol to Home Assistant
 
 ![downloads](https://img.shields.io/badge/dynamic/json?color=41BDF5&logo=home-assistant&label=addon%20usage&suffix=%20installs&cacheSeconds=15600&url=https://analytics.home-assistant.io/addons.json&query=$.f93730fa_ha_enoceanmqtt_aseracorp.total)
 
@@ -23,17 +14,23 @@ Easily integrate enOcean protocol using MQTT layer
 
 <div align="center"><h4><a href="#-about-the-project">ℹ️ About the Project</a> • <a href="#-stack-tech">🛠 Stack Tech</a> • <a href="#-setup">⚙ ️Setup</a> • <a href="#-contributing">👏🏻 Contributing</a></h4></div>
 
-<!-- TABLE_CONTENT_PLACEHOLDER -->
-
 ## ℹ️ About the Project
 
-This is the [Home Assistant](https://www.home-assistant.io/) addon for [HA_enoceanmqtt](https://github.com/ChristopheHD/HA_enoceanmqtt).  
-HA_enoceanmqtt allows to easily have access to EnOcean devices in Home Assistant through MQTT.
+This [Home Assistant](https://www.home-assistant.io/) addon allows to easily integrate [EnOcean devices](https://www.enocean-alliance.org/products/) using [MQTT integration](https://www.home-assistant.io/integrations/mqtt/).
 
-## 🛠 Stack Tech
+## ⭐️ Features
 
-<img src="https://raw.githubusercontent.com/mak-gitdev/HA_enoceanmqtt-addon/master/.github/images/install_addon.svg" alt="Install Addon" width="75%"/>
-<br/>
+1. **Compatibility**
+
+100+ devices supported
+
+2. **Pairing**
+
+Easily pair new devices
+
+3. **Versatile architecture**
+
+Easily add your own device compatibility
 
 ## ⚙ ️Simple setup
 
@@ -76,6 +73,23 @@ We welcome contributions from the community! If you would like to contribute to 
 - Contribute code by forking the repository, making changes, and submitting a pull request.
 
 For more information on how to contribute, please visit [Contribution Guidelines](https://github.com/ChristopheHD/HA_enoceanmqtt-addon/wiki/Contributing).
+
+## 🛠 Stack Tech
+[![Python][Python-badge]][Python-url] - A general-purpose programming language
+
+[Python-badge]: https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python
+[Python-url]: }
+[![Docker][Docker-badge]][Docker-url] - An open-source platform for deploying applications
+
+[Docker-badge]: https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker
+[Docker-url]: }
+[![MQTT][MQTT-badge]][MQTT-url] - Lightweight messaging protocol
+
+[MQTT-badge]: https://img.shields.io/badge/MQTT-C92C3E?style=for-the-badge&logo=mqtt
+[MQTT-url]: }
+
+<img src="https://raw.githubusercontent.com/mak-gitdev/HA_enoceanmqtt-addon/master/.github/images/install_addon.svg" alt="Install Addon" width="75%"/>
+<br/>
 
 ---
 
