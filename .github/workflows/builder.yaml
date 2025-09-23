@@ -25,12 +25,6 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4.2.2
 
-      - name: Get information
-        id: info
-        uses: home-assistant/actions/helpers/info@1.0.0
-        with:
-          path: "./addon"
-
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v3.4.0
         with:
