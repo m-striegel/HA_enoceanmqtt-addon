@@ -12,7 +12,7 @@ EnOcean compatibility using MQTT integration
 
 </div>
 
-<div align="center"><h4><a href="#-about-the-project">ℹ️ About the Project</a> • <a href="#-stack-tech">🛠 Stack Tech</a> • <a href="#-setup">⚙ ️Setup</a> • <a href="#-contributing">👏🏻 Contributing</a></h4></div>
+<div align="center"><h4><a href="#-about-the-project">ℹ️ About the Project</a> • <a href="#-features">⭐️ Features</a> • <a href="#-setup">⚙ ️Setup</a> • <a href="#-contributing">👏🏻 Contributing</a> • <a href="#-stack-tech">🛠 Stack Tech</a></h4></div>
 
 ## ℹ️ About the Project
 
