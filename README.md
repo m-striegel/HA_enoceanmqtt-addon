@@ -4,9 +4,9 @@
 <img width="196px" alt="Home Assistant enOcean addon" src="https://github.com/ChristopheHD/HA_enoceanmqtt-addon/blob/master/addon/logo.png?raw=true">
 </a>
 
-# Home Assistant enOcean addon
+# Home Assistant EnOcean addon
 
-Easily integrate enOcean protocol to Home Assistant
+EnOcean compatibility using MQTT integration
 
 ![downloads](https://img.shields.io/badge/dynamic/json?color=41BDF5&logo=home-assistant&label=addon%20usage&suffix=%20installs&cacheSeconds=15600&url=https://analytics.home-assistant.io/addons.json&query=$.f93730fa_ha_enoceanmqtt_aseracorp.total)
 
@@ -16,7 +16,7 @@ Easily integrate enOcean protocol to Home Assistant
 
 ## ℹ️ About the Project
 
-This [Home Assistant](https://www.home-assistant.io/) addon allows to easily integrate [EnOcean devices](https://www.enocean-alliance.org/products/) using [MQTT integration](https://www.home-assistant.io/integrations/mqtt/).
+This [Home Assistant](https://www.home-assistant.io/) addon allows to integrate [EnOcean devices](https://www.enocean-alliance.org/products/) using [MQTT integration](https://www.home-assistant.io/integrations/mqtt/).
 
 ## ⭐️ Features
 
@@ -26,11 +26,11 @@ This [Home Assistant](https://www.home-assistant.io/) addon allows to easily int
 
 2. **Pairing**
 
-Easily pair new devices
+Pair devices from Home Assistant
 
 3. **Versatile architecture**
 
-Easily add your own device compatibility
+Add your own device compatibility
 
 ## ⚙ ️Simple setup
 
