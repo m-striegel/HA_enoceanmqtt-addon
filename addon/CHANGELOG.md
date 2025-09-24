@@ -1,3 +1,18 @@
+## 0.1.42
+
+### 🚀 What's Improved
+
+- Better serial port handling and logging to prevent or have more information on issue https://github.com/ChristopheHD/HA_enoceanmqtt-addon/issues/61
+
+### 🔧 What's Fixed
+
+- EEP D2-01-11 state fixed for DALI controllers (and other controllers based on dimming) (https://github.com/ChristopheHD/HA_enoceanmqtt/pull/19)
+- Eltako FJ62 current position fixed on reboot thanks to @jdr85 (https://github.com/ChristopheHD/HA_enoceanmqtt/pull/20)
+
+### 👏 New Contributors
+
+- @jdr85 made their first contribution
+
 ## 0.1.41
 
 ### ✨ What's New
