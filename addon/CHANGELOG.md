@@ -1,4 +1,8 @@
-## 0.1.43
+## 1.0.0
+
+### 🎉 Version 1
+
+Since more than 1 year that I made this fork and tried to improve the life of HA Enocean device owners (50+ users when I write those lines), I decided that this addon is stable enough to have a version 1.x release. Next releases will follow the versioning rules described in [VERSION.md](https://github.com/ChristopheHD/HA_enoceanmqtt-addon/blob/master/VERSION.md)
 
 ### ✨ What's New
 
