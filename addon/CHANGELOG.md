@@ -8,6 +8,16 @@ Since more than 1 year that I made this fork and tried to improve the life of HA
 
 - Device Eltako TF100L
 
+### 🔧 What's Fixed
+
+- Fixes for EEP D2-14-41 thanks to @frankrml including
+  - Removing of raw data
+  - Rounding illumination value
+  - Accelaration status is now type enum
+  - Rounding acceleration values
+  - Contact sensor is now type door
+  - Contact sensor have now a door icon
+  
 ## 0.1.42
 
 ### 🚀 What's Improved
