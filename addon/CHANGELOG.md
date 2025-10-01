@@ -17,6 +17,10 @@ Since more than 1 year that I made this fork and tried to improve the life of HA
   - Rounding acceleration values
   - Contact sensor is now type door
   - Contact sensor have now a door icon
+
+### 👏 New Contributors
+
+- @frankrml made their first contribution
   
 ## 0.1.42
 
