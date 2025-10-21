@@ -13,9 +13,9 @@ export CONFIG_FILE="/data/enoceanmqtt.conf"
 export DB_FILE="/data/enoceanmqtt_db.json"
 DEVICE_FILE="$(bashio::config 'device_file')"
 export DEVICE_FILE
-LOG_FILE="$(bashio::config 'log_file')"
+LOG_FILE="$(bashio::config 'logging.log_file')"
 export LOG_FILE
-MAPPING_FILE="$(bashio::config 'mapping_file')"
+MAPPING_FILE="$(bashio::config 'mapping_files.mapping_file')"
 export MAPPING_FILE
 bashio::log.blue "Retrieved devices file: $DEVICE_FILE"
 
@@ -37,34 +37,21 @@ MQTT_HOST=
 MQTT_PORT=
 MQTT_USER=
 MQTT_PSWD=
-if bashio::config.is_empty 'mqtt_broker'; then
-  if bashio::var.has_value "$(bashio::services 'mqtt')"; then
-    MQTT_HOST="$(bashio::services 'mqtt' 'host')"
-    export MQTT_HOST
-    MQTT_PORT="$(bashio::services 'mqtt' 'port')"
-    export MQTT_PORT
-    MQTT_USER="$(bashio::services 'mqtt' 'username')"
-    export MQTT_USER
-    MQTT_PSWD="$(bashio::services 'mqtt' 'password')"
-    export MQTT_PSWD
-  fi
-else
-  if ! bashio::config.is_empty 'mqtt_broker.host'; then
-    MQTT_HOST="$(bashio::config 'mqtt_broker.host')"
-    export MQTT_HOST
-  fi
-  if ! bashio::config.is_empty 'mqtt_broker.port'; then
-    MQTT_PORT="$(bashio::config 'mqtt_broker.port')"
-    export MQTT_PORT
-  fi
-  if ! bashio::config.is_empty 'mqtt_broker.user'; then
-    MQTT_USER="$(bashio::config 'mqtt_broker.user')"
-    export MQTT_USER
-  fi
-  if ! bashio::config.is_empty 'mqtt_broker.pwd'; then
-    MQTT_PSWD="$(bashio::config 'mqtt_broker.pwd')"
-    export MQTT_PSWD
-  fi
+if ! bashio::config.is_empty 'mqtt_broker.host'; then
+  MQTT_HOST="$(bashio::config 'mqtt_broker.host')"
+  export MQTT_HOST
+fi
+if ! bashio::config.is_empty 'mqtt_broker.port'; then
+  MQTT_PORT="$(bashio::config 'mqtt_broker.port')"
+  export MQTT_PORT
+fi
+if ! bashio::config.is_empty 'mqtt_broker.user'; then
+  MQTT_USER="$(bashio::config 'mqtt_broker.user')"
+  export MQTT_USER
+fi
+if ! bashio::config.is_empty 'mqtt_broker.pwd'; then
+  MQTT_PSWD="$(bashio::config 'mqtt_broker.pwd')"
+  export MQTT_PSWD
 fi
 
 # Check MQTT parameters
@@ -80,7 +67,7 @@ if [ -z "${MQTT_HOST}" ] || \
 fi
 
 # Debug parameter
-if bashio::var.true "$(bashio::config 'debug')"; then
+if bashio::var.true "$(bashio::config 'logging.debug')"; then
   export DEBUG_FLAG="--debug"
 else
   export DEBUG_FLAG=""
@@ -115,15 +102,15 @@ else
 fi
 
 # Create enoceanmqtt configuration file
-MQTT_PREFIX=$(bashio::config 'mqtt_prefix')
-MQTT_DISCOVERY_PREFIX=$(bashio::config 'mqtt_discovery_prefix')
+MQTT_PREFIX=$(bashio::config 'mqtt_broker.mqtt_prefix')
+MQTT_DISCOVERY_PREFIX=$(bashio::config 'mqtt_broker.mqtt_discovery_prefix')
 MQTT_PREFIX="${MQTT_PREFIX%/}/"
 MQTT_DISCOVERY_PREFIX="${MQTT_DISCOVERY_PREFIX%/}/"
 
 {
   echo "[CONFIG]"
   echo "enocean_port          = $ENOCEAN_PORT"
-  echo "log_packets           = $(bashio::config 'log_packets')"
+  echo "log_packets           = $(bashio::config 'logging.log_packets')"
   echo "overlay               = HA"
   echo "db_file               = $DB_FILE"
   echo "mapping_file          = $MAPPING_FILE"
@@ -131,8 +118,8 @@ MQTT_DISCOVERY_PREFIX="${MQTT_DISCOVERY_PREFIX%/}/"
   echo "mqtt_discovery_prefix = $MQTT_DISCOVERY_PREFIX"
   echo "mqtt_host             = $MQTT_HOST"
   echo "mqtt_port             = $MQTT_PORT"
-  echo "mqtt_client_id        = $(bashio::config 'mqtt_client_id')"
-  echo "mqtt_keepalive        = $(bashio::config 'mqtt_keepalive')"
+  echo "mqtt_client_id        = $(bashio::config 'mqtt_broker.mqtt_client_id')"
+  echo "mqtt_keepalive        = $(bashio::config 'mqtt_broker.mqtt_keepalive')"
   echo "mqtt_prefix           = $MQTT_PREFIX"
   echo "mqtt_user             = $MQTT_USER"
   echo "mqtt_pwd              = $MQTT_PSWD"
@@ -145,7 +132,7 @@ MQTT_DISCOVERY_PREFIX="${MQTT_DISCOVERY_PREFIX%/}/"
 rm -f "$LOG_FILE"
 
 if ! bashio::config.is_empty 'eep_file'; then
-   EEP_FILE="$(bashio::config 'eep_file')"
+   EEP_FILE="$(bashio::config 'mapping_files.eep_file')"
    EEP_FILE_LOCATION=$(find /app/venv/lib/ -name "EEP.xml" -print -quit 2>/dev/null)
    if [ -e "$EEP_FILE" ]; then
       bashio::log.green "Installing custom EEP.xml ..."

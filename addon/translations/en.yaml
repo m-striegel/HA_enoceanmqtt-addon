@@ -1,35 +1,49 @@
 ---
 configuration:
+  device_file:
+    name: Devices configuration file
   enocean_port:
     name: Serial/USB port of the key
     description: For TCP configuration, please select an unused serial port
   enocean_tcp:
-    name: TCP address and port of the key
+    name: TCP address and port of the key (only for TCP configurations)
     description: tcp:<address>:<port>
-  device_file:
-    name: Device file
-    description: enoceanmqtt.devices
-  mapping_file:
-    name: MQTT/HA mapping file
-    description: mapping.yaml
-  eep_file:
-    name: EEP/MQTT mapping file
-    description: EEP.xml
-  log_file:
-    name: Log file
-  debug:
-    name: Debug
-  log_packets:
-    name: Log packets
-  use_dev_name_in_entity:
-    name: Use device name in entity
+  mapping_files:
+    name: Mapping files
+    description: For advanced users and testers
+    fields:
+      mapping_file:
+        name: MQTT/HA mapping file
+        description: mapping.yaml
+      eep_file:
+        name: EEP/MQTT mapping file
+        description: EEP.xml
+  logging:
+    name: Logging/debug parameters
+    fields:
+      log_file:
+        name: Log file
+      debug:
+        name: Debug
+      log_packets:
+        name: Log packets
   mqtt_broker:
     name: MQTT broker
-  mqtt_discovery_prefix:
-    name: MQTT discovery prefix
-  mqtt_prefix:
-    name: MQTT prefix
-  mqtt_client_id:
-    name: MQTT client ID
-  mqtt_keepalive:
-    name: MQTT keepalive timer
+    description: For advanced users, do not fill those parameters if you don't know how to use it
+    fields:
+      host:
+        name: MQTT broker address
+      port:
+        name: MQTT broker port
+      user:
+        name: MQTT broker username
+      pwd:
+        name: MQTT broker user password
+      mqtt_discovery_prefix:
+        name: MQTT discovery prefix
+      mqtt_prefix:
+        name: MQTT prefix
+      mqtt_client_id:
+        name: MQTT client ID
+      mqtt_keepalive:
+        name: MQTT keepalive timer
