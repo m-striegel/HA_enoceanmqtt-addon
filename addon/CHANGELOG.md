@@ -1,8 +1,60 @@
-## 0.1.39
+## 1.0.0
+
+### 🎉 Version 1
+
+Since more than 1 year that I made this fork and tried to improve the life of HA Enocean device owners (50+ users when I write those lines), I decided that this addon is stable enough to have a version 1.x release. Next releases will follow the versioning rules described in [VERSION.md](https://github.com/ChristopheHD/HA_enoceanmqtt-addon/blob/master/VERSION.md)
+
+### ✨ What's New
+
+- Device Eltako TF100L
 
 ### 🔧 What's Fixed
 
-- CPU architecture x86_64 compatibility restored
+- Fixes for EEP D2-14-41 thanks to @frankrml including
+  - Removing of raw data
+  - Rounding illumination value
+  - Accelaration status is now type enum
+  - Rounding acceleration values
+  - Contact sensor is now type door
+  - Contact sensor have now a door icon
+
+### 👏 New Contributors
+
+- @frankrml made their first contribution
+  
+## 0.1.42
+
+### 🚀 What's Improved
+
+- Better serial port handling and logging to prevent or have more information on issue https://github.com/ChristopheHD/HA_enoceanmqtt-addon/issues/61
+
+### 🔧 What's Fixed
+
+- EEP D2-01-11 state fixed for DALI controllers (and other controllers based on dimming) (https://github.com/ChristopheHD/HA_enoceanmqtt/pull/19)
+- Eltako FJ62 current position fixed on reboot thanks to @jdr85 (https://github.com/ChristopheHD/HA_enoceanmqtt/pull/20)
+
+### 👏 New Contributors
+
+- @jdr85 made their first contribution
+
+## 0.1.41
+
+### ✨ What's New
+
+- Device Eltako FR62-230V thanks to @jansorg
+- Device Afriso FT thanks to @jansorg
+- EEP D2-01-11
+
+### 🚀 What's Improved
+
+- Documentation tab of the addon have been improved (quick setup guide and correct links to wiki)
+- Use of Python XML library for EEP.xml file (https://github.com/ChristopheHD/HA_enoceanmqtt-addon/issues/43)
+
+## 0.1.40
+
+### 🔧 What's Fixed
+
+- CPU architecture amd64 compatibility restored (https://github.com/ChristopheHD/HA_enoceanmqtt-addon/issues/51)
 
 ## 0.1.38
 

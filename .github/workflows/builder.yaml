@@ -1,9 +1,6 @@
 ---
 name: Builder
 
-env:
-  MONITORED_FILES: "build.yaml config.yaml Dockerfile rootfs"
-
 on:
   pull_request:
     branches:
@@ -16,7 +13,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Build add-on
+    name: Build ${{ matrix.arch }} add-on
+    strategy:
+      matrix:
+        arch: ["aarch64", "amd64"]
     permissions:
       contents: read
       packages: write
@@ -25,27 +25,19 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4.2.2
 
-      - name: Get information
-        id: info
-        uses: home-assistant/actions/helpers/info@master
-        with:
-          path: "./addon"
-
       - name: Login to GitHub Container Registry
-        if: env.BUILD_ARGS != '--test'
-        uses: docker/login-action@v3.4.0
+        uses: docker/login-action@v3.6.0
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build add-on
-        uses: home-assistant/builder@2025.03.0
+        uses: home-assistant/builder@2025.09.0
         with:
           args: |
-            ${{ env.BUILD_ARGS }} \
-            --all \
+            --${{ matrix.arch }} \
+            --image "${{ matrix.arch }}-ha_enoceanmqtt-addon" \
             --target /data/addon \
-            --image "$(echo ${{ steps.info.outputs.image }} | cut -d'/' -f3)" \
             --docker-hub "ghcr.io/${{ github.repository_owner }}" \
             --addon
