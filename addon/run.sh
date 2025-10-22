@@ -1,10 +1,10 @@
 #!/usr/bin/with-contenv bashio
 
 bashio::config.require 'device_file'
-bashio::config.require 'mqtt_discovery_prefix'
-bashio::config.require 'mqtt_prefix'
-bashio::config.require 'mqtt_client_id'
-bashio::config.require 'mqtt_keepalive'
+bashio::config.require 'mqtt_broker.mqtt_discovery_prefix'
+bashio::config.require 'mqtt_broker.mqtt_prefix'
+bashio::config.require 'mqtt_broker.mqtt_client_id'
+bashio::config.require 'mqtt_broker.mqtt_keepalive'
 
 bashio::log.green "Preparing to start..."
 
@@ -23,10 +23,10 @@ bashio::log.blue "Retrieved devices file: $DEVICE_FILE"
 ENOCEAN_PORT=""
 if ! bashio::config.is_empty 'enocean_tcp'; then
   ENOCEAN_PORT="$(bashio::config 'enocean_tcp')"
-  bashio::log.blue "EnOcean key port = $ENOCEAN_PORT"
+  bashio::log.blue "TCP EnOcean key = $ENOCEAN_PORT"
 elif ! bashio::config.is_empty 'enocean_port'; then
   ENOCEAN_PORT="$(bashio::config 'enocean_port')"
-  bashio::log.blue "EnOcean key port  = $ENOCEAN_PORT"
+  bashio::log.blue "Serial EnOcean key = $ENOCEAN_PORT"
 else
   bashio::exit.nok "No EnOcean key configured"
 fi
@@ -71,34 +71,6 @@ if bashio::var.true "$(bashio::config 'logging.debug')"; then
   export DEBUG_FLAG="--debug"
 else
   export DEBUG_FLAG=""
-fi
-
-# Device name in entity name
-HA_VERSION="$(bashio::core.version)"
-Year="$(echo "${HA_VERSION//[!0-9.]/}" | cut -d '.' -f 1)"
-Month="$(echo "${HA_VERSION//[!0-9.]/}" | cut -d '.' -f 2)"
-
-if [ "${Year}" -ge 2023 ]; then
-  if [ "${Year}" -eq 2023 ]; then
-    if [ "${Month}" -lt 8 ]; then
-      bashio::log.green "Overwrite use_dev_name_in_entity to TRUE"
-      USE_DEV_NAME_IN_ENTITY="True"
-    else
-      USE_DEV_NAME_IN_ENTITY="$(bashio::config 'use_dev_name_in_entity')"
-      bashio::log.green "use_dev_name_in_entity is USER-DEFINED (${USE_DEV_NAME_IN_ENTITY})"
-    fi
-  else
-    if [ "${Year}" -eq 2024 ] && [ "${Month}" -lt 2 ]; then
-      USE_DEV_NAME_IN_ENTITY="$(bashio::config 'use_dev_name_in_entity')"
-      bashio::log.green "use_dev_name_in_entity is USER-DEFINED (${USE_DEV_NAME_IN_ENTITY})"
-    else
-      bashio::log.green "Overwrite use_dev_name_in_entity to FALSE"
-      USE_DEV_NAME_IN_ENTITY="False"
-    fi
-  fi
-else
-  bashio::log.green "Overwrite use_dev_name_in_entity to TRUE"
-  USE_DEV_NAME_IN_ENTITY="True"
 fi
 
 # Create enoceanmqtt configuration file
