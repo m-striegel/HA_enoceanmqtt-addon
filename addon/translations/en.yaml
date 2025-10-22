@@ -4,7 +4,6 @@ configuration:
     name: Devices configuration file
   enocean_port:
     name: Serial/USB port of the key
-    description: For TCP configuration, please select an unused serial port
   enocean_tcp:
     name: TCP address and port of the key (only for TCP configurations)
     description: tcp:<address>:<port>
@@ -29,21 +28,21 @@ configuration:
         name: Log packets
   mqtt_broker:
     name: MQTT broker
-    description: For advanced users, do not fill those parameters if you don't know how to use it
+    description: For advanced users, do not change those parameters if you don't know how to use it
     fields:
       host:
-        name: MQTT broker address
+        name: Broker address
       port:
-        name: MQTT broker port
+        name: Broker port
       user:
-        name: MQTT broker username
+        name: Username
       pwd:
-        name: MQTT broker user password
+        name: User password
       mqtt_discovery_prefix:
-        name: MQTT discovery prefix
+        name: HA discovery prefix
       mqtt_prefix:
         name: MQTT prefix
       mqtt_client_id:
-        name: MQTT client ID
+        name: Client ID
       mqtt_keepalive:
-        name: MQTT keepalive timer
+        name: Keepalive timer

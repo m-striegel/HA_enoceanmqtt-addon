@@ -35,7 +35,7 @@ options:
     mqtt_keepalive: 60
 schema:
   device_file: "str"
-  enocean_port: "device(subsystem=tty)"
+  enocean_port: "device(subsystem=tty)?"
   enocean_tcp: "match(tcp:.+:[0-9]+|^$)?"
   mapping_files:
     mapping_file: "str?"
