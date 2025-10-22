@@ -37,6 +37,16 @@ MQTT_HOST=
 MQTT_PORT=
 MQTT_USER=
 MQTT_PSWD=
+if bashio::var.has_value "$(bashio::services 'mqtt')"; then
+  MQTT_HOST="$(bashio::services 'mqtt' 'host')"
+  export MQTT_HOST
+  MQTT_PORT="$(bashio::services 'mqtt' 'port')"
+  export MQTT_PORT
+  MQTT_USER="$(bashio::services 'mqtt' 'username')"
+  export MQTT_USER
+  MQTT_PSWD="$(bashio::services 'mqtt' 'password')"
+  export MQTT_PSWD
+fi
 if ! bashio::config.is_empty 'mqtt.host'; then
   MQTT_HOST="$(bashio::config 'mqtt.host')"
   export MQTT_HOST
