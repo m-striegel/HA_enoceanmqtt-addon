@@ -16,6 +16,7 @@ Since more than 1 year that I made this fork and tried to improve the life of HA
 ### 🚀 What's Improved
 
 - Configuration tab have been reorganized with categories of options
+- Better error handling at startup (https://github.com/ChristopheHD/HA_enoceanmqtt-addon/issues/68 and https://github.com/ChristopheHD/HA_enoceanmqtt-addon/issues/69)
 
 ### 🔧 What's Fixed
 
