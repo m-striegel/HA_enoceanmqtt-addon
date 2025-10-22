@@ -27,6 +27,10 @@ Since more than 1 year that I made this fork and tried to improve the life of HA
   - Rounding acceleration values
   - Contact sensor is now type door
   - Contact sensor have now a door icon
+ 
+### 🛑 What's Removed
+
+- Option to use device name in entity name have been removed
 
 ### 👏 New Contributors
 
