@@ -28,11 +28,15 @@ options:
     log_file: "/config/enoceanmqtt.log"
     debug: false
     log_packets: false
-  mqtt_broker:
-    mqtt_discovery_prefix: "homeassistant"
-    mqtt_prefix: "enoceanmqtt"
-    mqtt_client_id: "enocean_gateway"
-    mqtt_keepalive: 60
+  mqtt:
+    host: ""
+    port: ""
+    user: ""
+    pwd: ""
+    discovery_prefix: "homeassistant"
+    prefix: "enoceanmqtt"
+    client_id: "enocean_gateway"
+    keepalive: 60
 schema:
   device_file: "str"
   enocean_port: "device(subsystem=tty)?"
@@ -44,12 +48,12 @@ schema:
     log_file: "str?"
     debug: "bool?"
     log_packets: "bool?"
-  mqtt_broker:
+  mqtt:
     host: "str?"
     port: "str?"
     user: "str?"
     pwd: "password?"
-    mqtt_discovery_prefix: "str"
-    mqtt_prefix: "str"
-    mqtt_client_id: "str"
-    mqtt_keepalive: "int"
+    discovery_prefix: "str"
+    prefix: "str"
+    client_id: "str"
+    keepalive: "int"

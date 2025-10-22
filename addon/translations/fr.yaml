@@ -26,7 +26,7 @@ configuration:
         name: Debug
       log_packets:
         name: Tracer les paquets
-  mqtt_broker:
+  mqtt:
     name: MQTT
     description: Utilisateurs avancés uniquement, ne pas changer ces paramètres si vous ne savez pas à quoi ils correspondent
     fields:
@@ -38,11 +38,11 @@ configuration:
         name: Nom d'utilisateur
       pwd:
         name: Mot de passe utilisateur
-      mqtt_discovery_prefix:
+      discovery_prefix:
         name: Préfixe de découverte Home Assistant
-      mqtt_prefix:
+      prefix:
         name: Préfixe MQTT
-      mqtt_client_id:
+      client_id:
         name: Identifiant client
-      mqtt_keepalive:
+      keepalive:
         name: Timer de maintien de session

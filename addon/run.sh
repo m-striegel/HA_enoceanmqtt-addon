@@ -1,10 +1,10 @@
 #!/usr/bin/with-contenv bashio
 
 bashio::config.require 'device_file'
-bashio::config.require 'mqtt_broker.mqtt_discovery_prefix'
-bashio::config.require 'mqtt_broker.mqtt_prefix'
-bashio::config.require 'mqtt_broker.mqtt_client_id'
-bashio::config.require 'mqtt_broker.mqtt_keepalive'
+bashio::config.require 'mqtt.discovery_prefix'
+bashio::config.require 'mqtt.prefix'
+bashio::config.require 'mqtt.client_id'
+bashio::config.require 'mqtt.keepalive'
 
 bashio::log.green "Preparing to start..."
 
@@ -37,20 +37,20 @@ MQTT_HOST=
 MQTT_PORT=
 MQTT_USER=
 MQTT_PSWD=
-if ! bashio::config.is_empty 'mqtt_broker.host'; then
-  MQTT_HOST="$(bashio::config 'mqtt_broker.host')"
+if ! bashio::config.is_empty 'mqtt.host'; then
+  MQTT_HOST="$(bashio::config 'mqtt.host')"
   export MQTT_HOST
 fi
-if ! bashio::config.is_empty 'mqtt_broker.port'; then
-  MQTT_PORT="$(bashio::config 'mqtt_broker.port')"
+if ! bashio::config.is_empty 'mqtt.port'; then
+  MQTT_PORT="$(bashio::config 'mqtt.port')"
   export MQTT_PORT
 fi
-if ! bashio::config.is_empty 'mqtt_broker.user'; then
-  MQTT_USER="$(bashio::config 'mqtt_broker.user')"
+if ! bashio::config.is_empty 'mqtt.user'; then
+  MQTT_USER="$(bashio::config 'mqtt.user')"
   export MQTT_USER
 fi
-if ! bashio::config.is_empty 'mqtt_broker.pwd'; then
-  MQTT_PSWD="$(bashio::config 'mqtt_broker.pwd')"
+if ! bashio::config.is_empty 'mqtt.pwd'; then
+  MQTT_PSWD="$(bashio::config 'mqtt.pwd')"
   export MQTT_PSWD
 fi
 
@@ -74,8 +74,8 @@ else
 fi
 
 # Create enoceanmqtt configuration file
-MQTT_PREFIX=$(bashio::config 'mqtt_broker.mqtt_prefix')
-MQTT_DISCOVERY_PREFIX=$(bashio::config 'mqtt_broker.mqtt_discovery_prefix')
+MQTT_PREFIX=$(bashio::config 'mqtt.prefix')
+MQTT_DISCOVERY_PREFIX=$(bashio::config 'mqtt.discovery_prefix')
 MQTT_PREFIX="${MQTT_PREFIX%/}/"
 MQTT_DISCOVERY_PREFIX="${MQTT_DISCOVERY_PREFIX%/}/"
 
@@ -90,8 +90,8 @@ MQTT_DISCOVERY_PREFIX="${MQTT_DISCOVERY_PREFIX%/}/"
   echo "mqtt_discovery_prefix = $MQTT_DISCOVERY_PREFIX"
   echo "mqtt_host             = $MQTT_HOST"
   echo "mqtt_port             = $MQTT_PORT"
-  echo "mqtt_client_id        = $(bashio::config 'mqtt_broker.mqtt_client_id')"
-  echo "mqtt_keepalive        = $(bashio::config 'mqtt_broker.mqtt_keepalive')"
+  echo "mqtt_client_id        = $(bashio::config 'mqtt.client_id')"
+  echo "mqtt_keepalive        = $(bashio::config 'mqtt.keepalive')"
   echo "mqtt_prefix           = $MQTT_PREFIX"
   echo "mqtt_user             = $MQTT_USER"
   echo "mqtt_pwd              = $MQTT_PSWD"
