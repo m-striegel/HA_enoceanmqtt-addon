@@ -2,7 +2,7 @@
 
 ### 🚨 Breaking change !
 
-If you are using mapping file or MQTT configuration, you will need to reset the configuration after the update
+If you are using debug option, mapping file or MQTT configuration, you will need to reset those configurations after the update
 
 ### 🎉 Version 1
 
