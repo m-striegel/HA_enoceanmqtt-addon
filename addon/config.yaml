@@ -2,8 +2,9 @@
 name: "EnOcean MQTT"
 description: "EnOcean to MQTT bridge"
 url: "https://github.com/ChristopheHD/HA_enoceanmqtt-addon"
-version: "0.1.42"
+version: "1.0.0"
 slug: "ha_enoceanmqtt_aseracorp"
+homeassistant: "2024.2.0"
 init: false
 uart: true
 hassio_api: true
@@ -20,33 +21,39 @@ options:
   device_file: "/config/enoceanmqtt.devices"
   enocean_port: ""
   enocean_tcp: ""
-  mapping_file: ""
-  eep_file: ""
-  log_file: "/config/enoceanmqtt.log"
-  debug: false
-  log_packets: false
-  use_dev_name_in_entity: false
-  mqtt_broker: {}
-  mqtt_discovery_prefix: "homeassistant"
-  mqtt_prefix: "enoceanmqtt"
-  mqtt_client_id: "enocean_gateway"
-  mqtt_keepalive: 60
+  mapping_files:
+    mapping_file: ""
+    eep_file: ""
+  logging:
+    log_file: "/config/enoceanmqtt.log"
+    debug: false
+    log_packets: false
+  mqtt:
+    host: ""
+    port: ""
+    user: ""
+    pwd: ""
+    discovery_prefix: "homeassistant"
+    prefix: "enoceanmqtt"
+    client_id: "enocean_gateway"
+    keepalive: 60
 schema:
   device_file: "str"
-  enocean_port: "device(subsystem=tty)"
+  enocean_port: "device(subsystem=tty)?"
   enocean_tcp: "match(tcp:.+:[0-9]+|^$)?"
-  mapping_file: "str?"
-  eep_file: "str?"
-  log_file: "str?"
-  debug: "bool?"
-  log_packets: "bool?"
-  use_dev_name_in_entity: "bool?"
-  mqtt_broker:
+  mapping_files:
+    mapping_file: "str?"
+    eep_file: "str?"
+  logging:
+    log_file: "str?"
+    debug: "bool?"
+    log_packets: "bool?"
+  mqtt:
     host: "str?"
     port: "str?"
     user: "str?"
     pwd: "password?"
-  mqtt_discovery_prefix: "str"
-  mqtt_prefix: "str"
-  mqtt_client_id: "str"
-  mqtt_keepalive: "int"
+    discovery_prefix: "str"
+    prefix: "str"
+    client_id: "str"
+    keepalive: "int"

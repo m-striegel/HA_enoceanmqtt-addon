@@ -1,0 +1,48 @@
+---
+configuration:
+  device_file:
+    name: Fichier de configuration des appareils
+  enocean_port:
+    name: Port USB/série de la clé Enocean
+  enocean_tcp:
+    name: Adresse et port TCP de la clé Enocean (uniquement pour les configurations TCP)
+    description: tcp:<address>:<port>
+  mapping_files:
+    name: Fichiers de mapping
+    description: Utilisateurs avancés uniquement
+    fields:
+      mapping_file:
+        name: Fichier de correspondance MQTT/HA
+        description: mapping.yaml
+      eep_file:
+        name: Fichier de correspondance EEP/MQTT
+        description: EEP.xml
+  logging:
+    name: Paramètres des journaux
+    fields:
+      log_file:
+        name: Fichier de journalisation
+      debug:
+        name: Debug
+      log_packets:
+        name: Tracer les paquets
+  mqtt:
+    name: MQTT
+    description: Utilisateurs avancés uniquement, ne pas changer ces paramètres si vous ne savez pas à quoi ils correspondent
+    fields:
+      host:
+        name: Adresse du broker
+      port:
+        name: Port du broker
+      user:
+        name: Nom d'utilisateur
+      pwd:
+        name: Mot de passe utilisateur
+      discovery_prefix:
+        name: Préfixe de découverte Home Assistant
+      prefix:
+        name: Préfixe MQTT
+      client_id:
+        name: Identifiant client
+      keepalive:
+        name: Timer de maintien de session

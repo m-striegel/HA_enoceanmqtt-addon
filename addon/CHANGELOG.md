@@ -1,3 +1,43 @@
+## 1.0.0
+
+### 🚨 Breaking change !
+
+If you are using debug option, mapping file or MQTT configuration, you will need to reset those configurations after the update
+
+### 🎉 Version 1
+
+Since more than 1 year that I made this fork and tried to improve the life of HA Enocean device owners (50+ users when I write those lines), I decided that this addon is stable enough to have a version 1.x release. Next releases will follow the versioning rules described in [VERSION.md](https://github.com/ChristopheHD/HA_enoceanmqtt-addon/blob/master/VERSION.md)
+
+### ✨ What's New
+
+- Device Eltako TF100L
+- Device Eltako FLD61
+- Device Eltako FBH55ESB
+- French translation of configuration tab
+
+### 🚀 What's Improved
+
+- Configuration tab have been reorganized with categories of options
+- Better error handling at startup (https://github.com/ChristopheHD/HA_enoceanmqtt-addon/issues/68 and https://github.com/ChristopheHD/HA_enoceanmqtt-addon/issues/69)
+
+### 🔧 What's Fixed
+
+- Fixes for EEP D2-14-41 thanks to @frankrml including
+  - Removing of raw data
+  - Rounding illumination value
+  - Accelaration status is now type enum
+  - Rounding acceleration values
+  - Contact sensor is now type door
+  - Contact sensor have now a door icon
+ 
+### 🛑 What's Removed
+
+- Option to use device name in entity name have been removed
+
+### 👏 New Contributors
+
+- @frankrml made their first contribution
+  
 ## 0.1.42
 
 ### 🚀 What's Improved

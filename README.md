@@ -8,7 +8,7 @@
 
 EnOcean compatibility using MQTT integration
 
-![downloads](https://img.shields.io/badge/dynamic/json?color=41BDF5&logo=home-assistant&label=addon%20usage&suffix=%20installs&cacheSeconds=15600&url=https://analytics.home-assistant.io/addons.json&query=$.f93730fa_ha_enoceanmqtt_aseracorp.total)
+![downloads](https://img.shields.io/badge/dynamic/json?color=41BDF5&logo=home-assistant&label=addon%20usage&suffix=%20active%20installations&cacheSeconds=15600&url=https://analytics.home-assistant.io/addons.json&query=$.f93730fa_ha_enoceanmqtt_aseracorp.total)
 
 </div>
 
