@@ -12,6 +12,7 @@ Since more than 1 year that I made this fork and tried to improve the life of HA
 
 - Device Eltako TF100L
 - Device Eltako FLD61
+- Device Eltako FBH55ESB
 - French translation of configuration tab
 
 ### 🚀 What's Improved
