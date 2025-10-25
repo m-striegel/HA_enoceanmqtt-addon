@@ -1,3 +1,9 @@
+## 1.0.1
+
+### 🛑 What's Removed
+
+- Entity `cover` have been removed from EEP D2-05-xx to avoid confusion for new-comers. Only entity `cover2` is remaining. `cover2` is not a good entity name but changing it would force current users to review all their automations.
+
 ## 1.0.0
 
 ### 🚨 Breaking change !
