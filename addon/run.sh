@@ -54,10 +54,10 @@ if ! bashio::config.is_empty 'mqtt.pwd'; then
   export MQTT_PSWD
 fi
 
-if ! [ -z "${MQTT_HOST}" ] && \
-   ! [ -z "${MQTT_PORT}" ] && \
-   ! [ -z "${MQTT_USER}" ] && \
-   ! [ -z "${MQTT_PSWD}" ]; then
+if [ -z "${MQTT_HOST}" ] && \
+   [ -z "${MQTT_PORT}" ] && \
+   [ -z "${MQTT_USER}" ] && \
+   [ -z "${MQTT_PSWD}" ]; then
   if bashio::var.has_value "$(bashio::services 'mqtt')"; then
     MQTT_HOST="$(bashio::services 'mqtt' 'host')"
     export MQTT_HOST
