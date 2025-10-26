@@ -3,6 +3,7 @@
 ### 🔧 What's Fixed
 
 - Custom EEP mapping file was not taken into account (https://github.com/ChristopheHD/HA_enoceanmqtt-addon/issues/74)
+- Remove wrong error logs when using external MQTT server (https://github.com/ChristopheHD/HA_enoceanmqtt-addon/issues/73)
 
 ### 🛑 What's Removed
 
