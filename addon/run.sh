@@ -112,7 +112,7 @@ MQTT_DISCOVERY_PREFIX="${MQTT_DISCOVERY_PREFIX%/}/"
 # Delete previous session log
 rm -f "$LOG_FILE"
 
-if ! bashio::config.is_empty 'eep_file'; then
+if ! bashio::config.is_empty 'mapping_files.eep_file'; then
    EEP_FILE="$(bashio::config 'mapping_files.eep_file')"
    EEP_FILE_LOCATION=$(find /app/venv/lib/ -name "EEP.xml" -print -quit 2>/dev/null)
    if [ -e "$EEP_FILE" ]; then
