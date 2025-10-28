@@ -37,16 +37,6 @@ MQTT_HOST=
 MQTT_PORT=
 MQTT_USER=
 MQTT_PSWD=
-if bashio::var.has_value "$(bashio::services 'mqtt')"; then
-  MQTT_HOST="$(bashio::services 'mqtt' 'host')"
-  export MQTT_HOST
-  MQTT_PORT="$(bashio::services 'mqtt' 'port')"
-  export MQTT_PORT
-  MQTT_USER="$(bashio::services 'mqtt' 'username')"
-  export MQTT_USER
-  MQTT_PSWD="$(bashio::services 'mqtt' 'password')"
-  export MQTT_PSWD
-fi
 if ! bashio::config.is_empty 'mqtt.host'; then
   MQTT_HOST="$(bashio::config 'mqtt.host')"
   export MQTT_HOST
@@ -62,6 +52,22 @@ fi
 if ! bashio::config.is_empty 'mqtt.pwd'; then
   MQTT_PSWD="$(bashio::config 'mqtt.pwd')"
   export MQTT_PSWD
+fi
+
+if [ -z "${MQTT_HOST}" ] && \
+   [ -z "${MQTT_PORT}" ] && \
+   [ -z "${MQTT_USER}" ] && \
+   [ -z "${MQTT_PSWD}" ]; then
+  if bashio::var.has_value "$(bashio::services 'mqtt')"; then
+    MQTT_HOST="$(bashio::services 'mqtt' 'host')"
+    export MQTT_HOST
+    MQTT_PORT="$(bashio::services 'mqtt' 'port')"
+    export MQTT_PORT
+    MQTT_USER="$(bashio::services 'mqtt' 'username')"
+    export MQTT_USER
+    MQTT_PSWD="$(bashio::services 'mqtt' 'password')"
+    export MQTT_PSWD
+  fi
 fi
 
 # Check MQTT parameters
@@ -112,8 +118,8 @@ MQTT_DISCOVERY_PREFIX="${MQTT_DISCOVERY_PREFIX%/}/"
 # Delete previous session log
 rm -f "$LOG_FILE"
 
-if ! bashio::config.is_empty 'eep_file'; then
-   EEP_FILE="$(bashio::config 'mapping_files.eep_file')"
+if ! bashio::config.is_empty 'mapping_files.eep_file'; then
+   EEP_FILE=$(bashio::config 'mapping_files.eep_file')
    EEP_FILE_LOCATION=$(find /app/venv/lib/ -name "EEP.xml" -print -quit 2>/dev/null)
    if [ -e "$EEP_FILE" ]; then
       bashio::log.green "Installing custom EEP.xml ..."
